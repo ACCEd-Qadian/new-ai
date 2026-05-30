@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate AI Trading Intelligence | Master Control Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="mesh-bg"></div>
+    <div class="scanline"></div>
+
+    <header class="top-bar">
+        <div class="logo-area">
+            <div class="ai-core-indicator pulse"></div>
+            <h1>QUANTUM <span class="highlight">AI</span> CORE</h1>
+            <div class="badge">INSTITUTIONAL GRADE</div>
+        </div>
+        <div class="system-status">
+            <div class="status-item">
+                <span class="label">MARKET STATE</span>
+                <span class="value warning" id="market-state">ANALYZING...</span>
+            </div>
+            <div class="status-item">
+                <span class="label">TRADING WINDOW</span>
+                <span class="value" id="time-window">09:00 - 15:00</span>
+            </div>
+            <div class="status-item">
+                <span class="label">CURRENT TIME</span>
+                <span class="value highlight" id="clock">00:00:00</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <aside class="sidebar">
+            <button class="angel-btn" id="angel-btn" onclick="runAngelOneAnalysis()">
+                <i class="fa-solid fa-chart-line"></i>
+                <div class="btn-text">
+                    <span>ANGEL ONE AI</span>
+                    <small>Live Market Analysis</small>
+                </div>
+            </button>
+            <div class="panel-header">AVAILABLE MODES</div>
+            <nav class="mode-selector">
+                <button class="mode-btn active" data-mode="SIGNAL">
+                    <i class="fa-solid fa-satellite-dish"></i>
+                    <div class="btn-text">
+                        <span>[1] SIGNAL MODE</span>
+                        <small>Analysis & Alerts Only</small>
+                    </div>
+                </button>
+                <button class="mode-btn" data-mode="PAPER">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <div class="btn-text">
+                        <span>[2] PAPER TRADING</span>
+                        <small>Virtual Capital tracking</small>
+                    </div>
+                </button>
+                <button class="mode-btn" data-mode="SEMI_AUTO">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <div class="btn-text">
+                        <span>[3] SEMI AUTO</span>
+                        <small>Requires Human Auth</small>
+                    </div>
+                </button>
+                <button class="mode-btn" data-mode="AUTO">
+                    <i class="fa-solid fa-robot"></i>
+                    <div class="btn-text">
+                        <span>[4] AUTO TRADING</span>
+                        <small>1 Trade/Day • Smart Entry</small>
+                    </div>
+                </button>
+                <button class="mode-btn defense" data-mode="DEFENSE">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div class="btn-text">
+                        <span>[5] DEFENSE MODE</span>
+                        <small>Capital Protection</small>
+                    </div>
+                </button>
+            </nav>
+
+            <button class="emergency-stop" id="emergency-btn">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>EMERGENCY STOP</span>
+            </button>
+        </aside>
+
+        <section class="main-content">
+            <div class="top-widgets">
+                <div class="widget glass-panel">
+                    <h3>Probability Engine</h3>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <span class="metric-label">Confidence Score</span>
+                            <div class="progress-bar"><div class="fill" style="width: 87%;" id="confidence-fill"></div></div>
+                            <span class="metric-value" id="confidence-val">87%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Trade Quality</span>
+                            <div class="progress-bar"><div class="fill" style="width: 92%;" id="quality-fill"></div></div>
+                            <span class="metric-value" id="quality-val">92%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Manipulation Risk</span>
+                            <div class="progress-bar"><div class="fill danger" style="width: 14%;" id="manipulation-fill"></div></div>
+                            <span class="metric-value danger-text" id="manipulation-val">14%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Liquidity Score</span>
+                            <div class="progress-bar"><div class="fill warning" style="width: 65%;" id="liquidity-fill"></div></div>
+                            <span class="metric-value" id="liquidity-val">65%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget glass-panel analysis-engine">
+                    <h3>Multi-Layer Analysis</h3>
+                    <ul class="analysis-list" id="analysis-list">
+                        <li><i class="fa-solid fa-check"></i> Trend Alignment</li>
+                        <li><i class="fa-solid fa-spinner fa-spin"></i> Order Flow Analysis</li>
+                        <li><i class="fa-solid fa-check"></i> Smart Money Positioning</li>
+                        <li><i class="fa-solid fa-xmark danger-text"></i> Options Max Pain</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bottom-widgets">
+                <div class="widget glass-panel terminal">
+                    <div class="terminal-header">
+                        <span>AI CORE TERMINAL // THINKING LOG</span>
+                    </div>
+                    <div class="terminal-body" id="terminal-body">
+                        <p class="sys-msg">[SYSTEM] Initializing Autonomous Institutional Quantitative Trading Intelligence...</p>
+                        <p class="sys-msg">[PROTOCOL] Learning First Protocol ACTIVE.</p>
+                        <p class="sys-msg">[DIRECTIVE] Capital protection is more important than profit.</p>
+                        <p class="ai-msg">AI> Observing market structure. Volume is average. No immediate threats detected.</p>
+                    </div>
+                </div>
+                
+                <div class="widget glass-panel virtual-tracker">
+                    <h3>Virtual Trade Tracker</h3>
+                    <div class="tracker-stats">
+                        <div class="stat-box">
+                            <span class="stat-title">Signals Today</span>
+                            <span class="stat-number">0</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-title">Virtual P/L</span>
+                            <span class="stat-number positive">$0.00</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-title">Drawdown</span>
+                            <span class="stat-number">0.0%</span>
+                        </div>
+                    </div>
+                    <div class="action-area" id="action-area">
+                        <!-- Dynamic content based on mode -->
+                        <div class="standby-msg">AWAITING HIGH PROBABILITY SETUP</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Authentication Modal for Semi-Auto -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="auth-box glass-panel">
+            <h2><i class="fa-solid fa-fingerprint"></i> HUMAN AUTHORIZATION REQUIRED</h2>
+            <p>High probability trade detected. Do you authorize execution?</p>
+            <div class="trade-details">
+                <div><span>Type:</span> <strong class="positive">LONG (BUY)</strong></div>
+                <div><span>Risk:</span> <strong>0.5%</strong></div>
+                <div><span>Target:</span> <strong>2.5 R</strong></div>
+            </div>
+            <div class="auth-buttons">
+                <button class="btn-deny" onclick="denyTrade()">DENY</button>
+                <button class="btn-auth" onclick="authorizeTrade()">AUTHORIZE</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
